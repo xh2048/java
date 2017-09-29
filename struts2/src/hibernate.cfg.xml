@@ -55,6 +55,7 @@
 		 -->
 		<mapping resource="cn/xiahui/domain/Customer.hbm.xml" />
 		<mapping resource="cn/xiahui/domain/LinkMan.hbm.xml" />
+		<mapping resource="cn/xiahui/domain/User.hbm.xml" />
 		
 	</session-factory>
 </hibernate-configuration>
