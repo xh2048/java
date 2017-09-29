@@ -11,6 +11,10 @@
 	<package name="crm" namespace="/" extends="struts-default">
 		<action name="CustomerAction_*" class="cn.xiahui.web.action.CustomerAction" method="{1}">
 			<result name="list">/jsp/customer/list.jsp</result>
+			<result name="toList" type="redirectAction">
+				<param name="actionName">CustomerAction_list</param>
+				<param name="namespace">/</param>
+			</result>
 		</action>
 	</package>
 </struts>
