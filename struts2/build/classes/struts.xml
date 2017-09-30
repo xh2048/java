@@ -9,8 +9,25 @@
 	 -->
 	 <constant name="struts.devMode" value="true"></constant>
 	<package name="crm" namespace="/" extends="struts-default">
-	
-
+		<interceptors>
+			<!-- 注册拦截器 -->
+			<interceptor name="loginInterceptor" class="cn.xiahui.web.interceptor.LoginInterceptor"></interceptor>
+			<!-- 注册拦截器栈 -->
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="loginInterceptor">
+					<param name="excludeMethods">login</param>
+				</interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 指定包中的默认拦截器栈 -->
+		<default-interceptor-ref name="myStack"></default-interceptor-ref>
+		<!-- 定义全局结果集 -->
+		<global-results>
+			<result name="toLogin" type="redirect">/login.jsp</result>
+		</global-results>
+		
+		
 		<global-exception-mappings>
 			<!-- 如果出现java.lang.RuntimeException异常,就将跳转到名为error的结果 -->
 			<exception-mapping result="error" exception="java.lang.RuntimeException"></exception-mapping>
