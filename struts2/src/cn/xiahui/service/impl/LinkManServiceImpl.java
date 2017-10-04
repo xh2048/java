@@ -2,8 +2,6 @@ package cn.xiahui.service.impl;
 
 import cn.xiahui.dao.CustomerDao;
 import cn.xiahui.dao.LinkManDao;
-import cn.xiahui.dao.impl.LinkManDaoImpl;
-import cn.xiahui.dao.impl.CustomerDaoImpl;
 import cn.xiahui.domain.Customer;
 import cn.xiahui.domain.LinkMan;
 import cn.xiahui.service.LinkManService;
@@ -11,8 +9,16 @@ import cn.xiahui.utils.HibernateUtils;
 
 public class LinkManServiceImpl implements LinkManService {
 
-	private CustomerDao cd = new CustomerDaoImpl();
-	private LinkManDao lmd = new LinkManDaoImpl();
+	private CustomerDao cd;
+	private LinkManDao lmd;
+
+	public void setCd(CustomerDao cd) {
+		this.cd = cd;
+	}
+
+	public void setLmd(LinkManDao lmd) {
+		this.lmd = lmd;
+	}
 
 	@Override
 	public void save(LinkMan lm) {

@@ -7,14 +7,17 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.DetachedCriteria;
 
 import cn.xiahui.dao.CustomerDao;
-import cn.xiahui.dao.impl.CustomerDaoImpl;
 import cn.xiahui.domain.Customer;
 import cn.xiahui.service.CustomerService;
 import cn.xiahui.utils.HibernateUtils;
 
 public class CustomerServiceImpl implements CustomerService {
 
-	private CustomerDao customerDao = new  CustomerDaoImpl();
+	private CustomerDao customerDao;
+
+	public void setCustomerDao(CustomerDao customerDao) {
+		this.customerDao = customerDao;
+	}
 
 	@Override
 	public void save(Customer c) {

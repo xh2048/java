@@ -1,14 +1,17 @@
 package cn.xiahui.service.impl;
 
 import cn.xiahui.dao.UserDao;
-import cn.xiahui.dao.impl.UserDaoImpl;
 import cn.xiahui.domain.User;
 import cn.xiahui.service.UserService;
 import cn.xiahui.utils.HibernateUtils;
 
 public class UserServiceImpl implements UserService {
 
-	private UserDao ud = new UserDaoImpl();
+	private UserDao ud ;
+
+	public void setUd(UserDao ud) {
+		this.ud = ud;
+	}
 
 	@Override
 	public User login(User user) {
