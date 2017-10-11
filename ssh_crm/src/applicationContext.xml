@@ -95,10 +95,24 @@
 		<bean name="userAction" class="cn.xiahui.web.action.UserAction" scope="prototype">
 			<property name="userService" ref="userService"></property>
 		</bean>
+		<bean name="customerAction" class="cn.xiahui.web.action.CustomerAction" scope="prototype">
+			<property name="cs" ref="customerService"></property>
+		</bean>
+		
+		<!-- service -->
 		<bean name="userService" class="cn.xiahui.service.impl.UserServiceImpl">
 			<property name="ud" ref="userDao"></property>		
 		</bean>
+		<bean name="customerService" class="cn.xiahui.service.impl.CustomerServiceImpl">
+			<property name="cd" ref="customerDao"></property>		
+		</bean>
+		
+		<!-- dao -->
 		<bean name="userDao" class="cn.xiahui.dao.impl.UserDaoImpl">
+			<!-- 注入sessionFactory -->
+			<property name="sessionFactory" ref="sessionFactory"></property>		
+		</bean>
+		<bean name="customerDao" class="cn.xiahui.dao.impl.CustomerDaoImpl">
 			<!-- 注入sessionFactory -->
 			<property name="sessionFactory" ref="sessionFactory"></property>		
 		</bean>		

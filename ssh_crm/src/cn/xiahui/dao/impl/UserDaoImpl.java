@@ -5,16 +5,12 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.criterion.DetachedCriteria;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate5.HibernateCallback;
-import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
-
 import cn.xiahui.dao.UserDao;
 import cn.xiahui.domain.User;
 
 //HibernateDaoSupport 为dao注入sessionFactory
-public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
+public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao{
 
 	@Override
 	public User getByUserCode(final String usercode) {
@@ -45,9 +41,6 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
 			}*/
 		}
 
-	@Override
-	public void save(User u) {
-		getHibernateTemplate().save(u);
-	}
+
 
 }

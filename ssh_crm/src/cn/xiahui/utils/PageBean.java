@@ -44,6 +44,14 @@ public class PageBean {
 			this.currentPage = this.totalPage;
 		}
 	}
+	
+	//计算起始索引
+	public int getStart() {
+		
+		return (this.currentPage-1)*this.pageSize;
+	}
+	
+	
 
 	public Integer getCurrentPage() {
 		return currentPage;
@@ -84,7 +92,8 @@ public class PageBean {
 	public void setList(List list) {
 		this.list = list;
 	}
-	
+
+
 	
 	
 	
