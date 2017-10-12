@@ -63,6 +63,7 @@ public class CustomerAction extends ActionSupport  implements ModelDriven<Custom
 		}
 		
 		//调用service,保存Customer对象
+		System.out.println(customer);
 		cs.save(customer);
 		//重定向到客户列表Action
 		return "toList";
@@ -81,7 +82,7 @@ public class CustomerAction extends ActionSupport  implements ModelDriven<Custom
 	@Override
 	public Customer getModel() {
 		
-		return null;
+		return customer;
 	}
 	
 
