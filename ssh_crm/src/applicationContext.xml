@@ -27,7 +27,7 @@
 			<property name="sessionFactory" ref="sessionFactory"></property>
 		</bean>
 		<!-- 配置通知 -->
-<!-- 		<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:advice id="txAdvice" transaction-manager="transactionManager">
 			<tx:attributes>
 				<tx:method name="save*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
 				<tx:method name="persist*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
@@ -37,18 +37,19 @@
 				<tx:method name="remove*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
 				<tx:method name="get*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="true" />
 				<tx:method name="find*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="true" />
+				<tx:method name="*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
 			</tx:attributes>
-		</tx:advice> -->
+		</tx:advice>
 		<!-- 配置将通知织入目标对象 -->
 			<!-- 配置切点，配置切面-->
-<!-- 		<aop:config>
+		<aop:config>
 			<aop:pointcut expression="execution(* cn.xiahui.service.impl.*ServiceImpl.*(..))" id="txPc"/>
 			<aop:advisor advice-ref="txAdvice" pointcut-ref="txPc"/>
 		</aop:config>
-		 -->
+		
 		
 		<!-- AOP方式2：开启注解事务 -->
-		<tx:annotation-driven transaction-manager="transactionManager"/>
+		<!-- <tx:annotation-driven transaction-manager="transactionManager"/> -->
 		
 		
 		
@@ -98,6 +99,9 @@
 		<bean name="customerAction" class="cn.xiahui.web.action.CustomerAction" scope="prototype">
 			<property name="cs" ref="customerService"></property>
 		</bean>
+		<bean name="baseDictAction" class="cn.xiahui.web.action.BaseDictAction" scope="prototype" >
+			<property name="baseDictService" ref="baseDictService" ></property>
+		</bean>
 		
 		<!-- service -->
 		<bean name="userService" class="cn.xiahui.service.impl.UserServiceImpl">
@@ -105,6 +109,9 @@
 		</bean>
 		<bean name="customerService" class="cn.xiahui.service.impl.CustomerServiceImpl">
 			<property name="cd" ref="customerDao"></property>		
+		</bean>
+		<bean name="baseDictService" class="cn.xiahui.service.impl.BaseDictServiceImpl">
+			<property name="bdd" ref="baseDictDao"></property>		
 		</bean>
 		
 		<!-- dao -->
@@ -115,5 +122,9 @@
 		<bean name="customerDao" class="cn.xiahui.dao.impl.CustomerDaoImpl">
 			<!-- 注入sessionFactory -->
 			<property name="sessionFactory" ref="sessionFactory"></property>		
-		</bean>		
+		</bean>	
+		<bean name="baseDictDao" class="cn.xiahui.dao.impl.BaseDictDaoImpl">
+			<!-- 注入sessionFactory -->
+			<property name="sessionFactory" ref="sessionFactory"></property>		
+		</bean>			
 </beans>

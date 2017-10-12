@@ -1,5 +1,7 @@
 package cn.xiahui.web.action;
 
+import java.io.File;
+
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
@@ -22,6 +24,14 @@ public class CustomerAction extends ActionSupport  implements ModelDriven<Custom
 	private Integer currentPage;
 	
 	private CustomerService cs;
+	
+	//上传的文件会自动封装到File对象
+	//在后台提供一个与前台input type=file组件 name相同的属性
+	private File photo;
+	//在提交键名后加上固定后缀FileName,文件名称会自动封装到属性中
+	private String photoFileName;
+	//在提交键名后加上固定后缀ContentType,文件MIME类型会自动封装到属性中 
+	private String photoContentType;
 
 	public String list() throws Exception {
 		
@@ -42,6 +52,31 @@ public class CustomerAction extends ActionSupport  implements ModelDriven<Custom
 		return "list";
 		
 	}
+
+	
+	public String add() throws Exception {
+		if(photo!=null){
+			System.out.println("文件名称:"+photoFileName);
+			System.out.println("文件名称:"+photoContentType);
+			//将上传文件保存到指定位置
+			photo.renameTo(new File("D:/upload/haha.jpg"));
+		}
+		
+		//调用service,保存Customer对象
+		cs.save(customer);
+		//重定向到客户列表Action
+		return "toList";
+	}
+	
+	
+	public String toEdit() throws Exception {
+		//调用Service根据id获得客户对象
+		Customer c = cs.getById(customer.getCust_id());
+		//将客户对象放置到request域，并转发到编辑页面
+		ActionContext.getContext().put("customer", c);
+		return "edit";
+	}
+
 
 	@Override
 	public Customer getModel() {
@@ -68,6 +103,36 @@ public class CustomerAction extends ActionSupport  implements ModelDriven<Custom
 
 	public void setCs(CustomerService cs) {
 		this.cs = cs;
+	}
+
+
+	public File getPhoto() {
+		return photo;
+	}
+
+
+	public void setPhoto(File photo) {
+		this.photo = photo;
+	}
+
+
+	public String getPhotoFileName() {
+		return photoFileName;
+	}
+
+
+	public void setPhotoFileName(String photoFileName) {
+		this.photoFileName = photoFileName;
+	}
+
+
+	public String getPhotoContentType() {
+		return photoContentType;
+	}
+
+
+	public void setPhotoContentType(String photoContentType) {
+		this.photoContentType = photoContentType;
 	}
 	
 	
