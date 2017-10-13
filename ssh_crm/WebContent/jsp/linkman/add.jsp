@@ -48,7 +48,11 @@
 						<TABLE cellSpacing=0 cellPadding=5  border=0>
 							<tr>
 								<td>所属客户：</td>
-								<td colspan="3"><input type="text" name="cust_id" style="WIDTH: 180px"/></td>
+								<td colspan="3">
+									<input type="hidden" id="cust_id" style="WIDTH: 180px"/>
+									<input type="text" id="cust_name" style="WIDTH: 180px"/>
+									<input type="button" value="选择客户" onclick="window.open('${pageContext.request.contextPath}/Customer_list','width:600,height=300')"/>
+								</td>
 							</tr>
 							<TR>
 								<td>联系人名称：</td>
