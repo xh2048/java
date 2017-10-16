@@ -1,5 +1,8 @@
 package cn.xiahui.domain;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Customer {
 /*	  `cust_id` bigint(32) NOT NULL AUTO_INCREMENT COMMENT '客户编号(主键)',
 	  `cust_name` varchar(32) NOT NULL COMMENT '客户名称(公司名称)',
@@ -31,7 +34,17 @@ public class Customer {
 		private BaseDict cust_level;//客户级别
 		
 		
+		//biaoda客户与拜访记录的一对多
+		private Set<SaleVisit> saleVisits = new HashSet<SaleVisit>();
 		
+		
+		
+		public Set<SaleVisit> getSaleVisits() {
+			return saleVisits;
+		}
+		public void setSaleVisits(Set<SaleVisit> saleVisits) {
+			this.saleVisits = saleVisits;
+		}
 		public BaseDict getCust_source() {
 			return cust_source;
 		}

@@ -105,6 +105,9 @@
 		<bean name="linkManAction" class="cn.xiahui.web.action.LinkManAction" scope="prototype" >
 			<property name="lms" ref="linkManService" ></property>
 		</bean>
+		<bean name="saleVisitAction" class="cn.xiahui.web.action.SaleVisitAction" scope="prototype">
+			<property name="svs" ref="saleVisitService"></property>
+		</bean>
 		
 		<!-- service -->
 		<bean name="userService" class="cn.xiahui.service.impl.UserServiceImpl">
@@ -118,6 +121,9 @@
 		</bean>
 		<bean name="linkManService" class="cn.xiahui.service.impl.LinkManServiceImpl">
 			<property name="lmd" ref="linkManDao"></property>		
+		</bean>
+		<bean name="saleVisitService" class="cn.xiahui.service.impl.SaleVisitServiceImpl">
+			<property name="svd" ref="saleVisitDao"></property>		
 		</bean>
 		
 		<!-- dao -->
@@ -136,5 +142,9 @@
 		<bean name="linkManDao" class="cn.xiahui.dao.impl.LinkManDaoImpl">
 			<!-- 注入sessionFactory -->
 			<property name="sessionFactory" ref="sessionFactory"></property>		
-		</bean>			
+		</bean>	
+		<bean name="saleVisitDao" class="cn.xiahui.dao.impl.SaleVisitDaoImpl">
+			<!-- 注入sessionFactory -->
+			<property name="sessionFactory" ref="sessionFactory"></property>		
+		</bean>		
 </beans>
