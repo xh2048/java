@@ -102,6 +102,9 @@
 		<bean name="baseDictAction" class="cn.xiahui.web.action.BaseDictAction" scope="prototype" >
 			<property name="baseDictService" ref="baseDictService" ></property>
 		</bean>
+		<bean name="linkManAction" class="cn.xiahui.web.action.LinkManAction" scope="prototype" >
+			<property name="lms" ref="linkManService" ></property>
+		</bean>
 		
 		<!-- service -->
 		<bean name="userService" class="cn.xiahui.service.impl.UserServiceImpl">
@@ -112,6 +115,9 @@
 		</bean>
 		<bean name="baseDictService" class="cn.xiahui.service.impl.BaseDictServiceImpl">
 			<property name="bdd" ref="baseDictDao"></property>		
+		</bean>
+		<bean name="linkManService" class="cn.xiahui.service.impl.LinkManServiceImpl">
+			<property name="lmd" ref="linkManDao"></property>		
 		</bean>
 		
 		<!-- dao -->
@@ -124,6 +130,10 @@
 			<property name="sessionFactory" ref="sessionFactory"></property>		
 		</bean>	
 		<bean name="baseDictDao" class="cn.xiahui.dao.impl.BaseDictDaoImpl">
+			<!-- 注入sessionFactory -->
+			<property name="sessionFactory" ref="sessionFactory"></property>		
+		</bean>			
+		<bean name="linkManDao" class="cn.xiahui.dao.impl.LinkManDaoImpl">
 			<!-- 注入sessionFactory -->
 			<property name="sessionFactory" ref="sessionFactory"></property>		
 		</bean>			
