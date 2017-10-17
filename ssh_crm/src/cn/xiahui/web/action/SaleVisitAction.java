@@ -29,7 +29,7 @@ public class SaleVisitAction extends ActionSupport implements ModelDriven<SaleVi
 		saleVisit.setUser(u);
 		
 		//调用Service保存客户拜访记录
-		svs.save(saleVisit);
+			svs.save(saleVisit);
 		//重定向到拜访记录列表Action
 		return "toList";
 	}

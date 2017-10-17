@@ -6,7 +6,7 @@
  <hibernate-mapping package="cn.xiahui.domain">
  	<class name="SaleVisit" table="sale_visit">
  		<id name="visit_id">
- 			<generator class="uuid"></generator>
+ 			<generator class="native"></generator>
  		</id>
  		<property name="visit_interviewee"></property>
  		<property name="visit_addr"></property>

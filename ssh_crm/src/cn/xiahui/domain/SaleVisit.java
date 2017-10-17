@@ -22,7 +22,7 @@ public class SaleVisit {
 	) ENGINE=INNODB DEFAULT CHARSET=utf8;
 	 */
 	
-	private String visit_id ;
+	private Long visit_id ;
 	private String visit_interviewee ;
 	private String visit_addr;
 	private String visit_detail;
@@ -34,10 +34,10 @@ public class SaleVisit {
 	//表达所属客户对象 多对一
 	private User user;
 	
-	public String getVisit_id() {
+	public Long getVisit_id() {
 		return visit_id;
 	}
-	public void setVisit_id(String visit_id) {
+	public void setVisit_id(Long visit_id) {
 		this.visit_id = visit_id;
 	}
 	public String getVisit_interviewee() {

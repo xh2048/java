@@ -18,8 +18,6 @@ public class Customer {
 		private Long cust_id;
 		
 		private String cust_name;
-		private String cust_user_id;
-		private String cust_create_id;
 /*		private String cust_source;
 		private String cust_industry;
 		private String cust_level;*/
@@ -79,18 +77,6 @@ public class Customer {
 		}
 		public void setCust_name(String cust_name) {
 			this.cust_name = cust_name;
-		}
-		public String getCust_user_id() {
-			return cust_user_id;
-		}
-		public void setCust_user_id(String cust_user_id) {
-			this.cust_user_id = cust_user_id;
-		}
-		public String getCust_create_id() {
-			return cust_create_id;
-		}
-		public void setCust_create_id(String cust_create_id) {
-			this.cust_create_id = cust_create_id;
 		}
 
 		public String getCust_linkman() {

@@ -32,7 +32,7 @@ public class SaleVisitServiceImpl implements SaleVisitService {
 	}
 
 	@Override
-	public SaleVisit getById(String visit_id) {
+	public SaleVisit getById(Long visit_id) {
 
 		return svd.getById(visit_id);
 	}
