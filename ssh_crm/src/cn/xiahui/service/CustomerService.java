@@ -1,5 +1,7 @@
 package cn.xiahui.service;
 
+import java.util.List;
+
 import org.hibernate.criterion.DetachedCriteria;
 
 import cn.xiahui.domain.Customer;
@@ -13,6 +15,8 @@ public interface CustomerService {
 	void save(Customer customer);
 	//根据id获得客户对象
 	Customer getById(Long cust_id);
+	//获得按行业统计客户数量
+	List<Object[]> getIndustryCount();
 
 
 }
