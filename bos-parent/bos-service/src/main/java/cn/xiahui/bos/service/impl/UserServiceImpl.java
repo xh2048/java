@@ -13,9 +13,10 @@ import cn.xiahui.bos.utils.MD5Utils;
 @Transactional
 public class UserServiceImpl implements IUserService {
 
+	@Autowired
 	private IUserDao userDao;
 
-	@Autowired
+
 	public User login(User user) {
 		
 		// π”√MD5º”√‹√‹¬Î

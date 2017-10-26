@@ -1,5 +1,0 @@
-package cn.xiahui.bos.web.action.base;
-
-public class BaseAction<T> extends ActionSupport implements ModelDriven<T> {
-
-}

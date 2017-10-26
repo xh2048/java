@@ -1,5 +1,5 @@
 #Tomcat publish data
-#Thu Oct 26 20:20:57 CST 2017
+#Thu Oct 26 23:35:10 CST 2017
 org.eclipse.jst.jee.server\:bos-web=D\:\\Develop\\apache-tomcat-7.0.52\\webapps\\bos-web
 org.eclipse.jst.jee.server\:/binary\:D\:\\Develop\\repository\\org\\springframework\\spring-web\\4.2.4.RELEASE\\spring-web-4.2.4.RELEASE.jar=D\:\\Develop\\apache-tomcat-7.0.52\\webapps\\bos-web\\WEB-INF\\lib\\spring-web-4.2.4.RELEASE.jar
 org.eclipse.jst.j2ee.server\:bos-domain=D\:\\Develop\\apache-tomcat-7.0.52\\webapps\\bos-web\\WEB-INF\\lib\\bos-domain-0.0.1-SNAPSHOT.jar

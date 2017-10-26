@@ -8,10 +8,10 @@
   <artifactId>bos-utils</artifactId>
   <description>子工程，存放工具类</description>
   <dependencies>
-  	<dependency>
-  		<groupId>cn.xiahui</groupId>
-  		<artifactId>bos-domain</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
+  <dependency>
+  	<groupId>cn.xiahui</groupId>
+  	<artifactId>bos-domain</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  </dependency>
   </dependencies>
 </project>

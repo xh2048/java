@@ -1,5 +1,0 @@
-package cn.xiahui.bos.dao.impl;
-
-public class UserDaoImpl {
-
-}

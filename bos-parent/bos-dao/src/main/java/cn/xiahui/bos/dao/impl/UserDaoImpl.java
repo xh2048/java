@@ -1,12 +1,14 @@
 package cn.xiahui.bos.dao.impl;
 
-import java.io.Serializable;
 import java.util.List;
+
+import org.springframework.stereotype.Repository;
 
 import cn.xiahui.bos.dao.IUserDao;
 import cn.xiahui.bos.dao.base.impl.BaseDaoImpl;
 import cn.xiahui.bos.domain.User;
 
+@Repository
 public class UserDaoImpl extends BaseDaoImpl<User> implements IUserDao {
 
 	/**
