@@ -1,0 +1,7 @@
+package cn.xiahui.bos.web.action;
+
+import cn.xiahui.bos.web.action.base.BaseAction;
+
+public class UserAction extends BaseAction<User>{
+
+}

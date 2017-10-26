@@ -1,0 +1,19 @@
+package cn.xiahui.bos.service.impl;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import cn.xiahui.bos.service.IUserService;
+
+@Service
+@Transactional
+public class UserServiceImpl implements IUserService {
+
+	@Autowired
+	public User login(User model) {
+		
+		return null;
+	}
+
+
+}

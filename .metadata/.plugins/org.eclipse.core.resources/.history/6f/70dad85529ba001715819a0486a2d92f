@@ -1,0 +1,9 @@
+package cn.xiahui.bos.dao.base.impl;
+
+/**
+ * 持久层通用接口
+ */
+public interface IBaseDao<T> {
+	public void save(T entity);
+	public void delete(T entity);
+}

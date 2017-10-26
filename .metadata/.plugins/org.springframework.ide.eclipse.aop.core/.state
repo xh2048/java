@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="bos-service"/>
+<aop-project name="bos-dao"/>
+<aop-project name="bos-web"/>
+<aop-project name="bos-domain"/>
+<aop-project name="bos-utils"/>
+</aop-reference-model>

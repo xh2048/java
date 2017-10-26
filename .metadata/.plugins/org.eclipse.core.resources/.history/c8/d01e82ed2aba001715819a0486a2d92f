@@ -1,0 +1,24 @@
+package cn.xiahui.bos.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import cn.xiahui.bos.service.IUserService;
+
+@Service
+@Transactional
+public class UserServiceImpl implements IUserService {
+
+	private IUserDao userDao;
+
+	@Autowired
+	public User login(User model) {
+		
+		// π”√MD5º”√‹√‹¬Î
+		String password = MD5Utils.md5(user.getPassword());
+		return userDao.findUserByUsernameAndPassword(user.getUsername(),password);
+	}
+
+
+}

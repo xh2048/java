@@ -1,0 +1,28 @@
+package cn.xiahui.bos.web.action;
+
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+
+import cn.xiahui.bos.web.action.base.BaseAction;
+
+@Controller
+@Scope("prototype")
+public class UserAction extends BaseAction<User>{
+	//属性驱动，接受页面输入的验证码
+	private String checkcode;
+
+	public void setCheckcode(String checkcode) {
+		this.checkcode = checkcode;
+	}
+	
+	/**
+	 * 用户登录
+	 */
+	public String login(){
+		//从session中获取生成的验证码
+		  String validatecode = ServletActionContext.getRequest().getSession().getAttribute("key");
+	}
+}

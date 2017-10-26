@@ -4,9 +4,8 @@
   <artifactId>bos-parent</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <description>这是一个父工程，同时也是一聚合工程</description>
-  
-  <!-- 通过属性定义指定jar的版本 -->
+  <description>父工程</description>
+<!-- 通过属性定义指定jar的版本 -->
 	<properties>
 		<spring.version>4.2.4.RELEASE</spring.version>
 		<hibernate.version>5.0.7.Final</hibernate.version>

@@ -1,0 +1,15 @@
+package cn.xiahui.bos.web.action.base;
+
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+
+public class BaseAction<T> extends ActionSupport implements ModelDriven<T> {
+
+	//模型对象
+	protected T model;
+	public T getModel() {
+		
+		return null;
+	}
+
+}

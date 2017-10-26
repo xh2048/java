@@ -6,5 +6,5 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>bos-domain</artifactId>
-  <description>子工程，窜访实体类和映射文件</description>
+  <description>子工程，存放实体类和映射文件</description>
 </project>

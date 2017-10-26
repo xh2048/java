@@ -1,0 +1,5 @@
+package cn.xiahui.bos.dao.base.impl;
+
+public interface IBaseDao {
+
+}

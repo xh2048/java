@@ -1,0 +1,11 @@
+package cn.xiahui.bos.web.action;
+
+import org.springframework.stereotype.Controller;
+
+import cn.xiahui.bos.web.action.base.BaseAction;
+
+@Controller
+@Scope("prototype")
+public class UserAction extends BaseAction<User>{
+
+}

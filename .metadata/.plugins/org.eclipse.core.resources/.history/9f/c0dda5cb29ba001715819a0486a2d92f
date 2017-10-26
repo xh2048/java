@@ -1,0 +1,39 @@
+package cn.xiahui.bos.dao.base.impl;
+
+import java.io.Serializable;
+import java.util.List;
+
+import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
+
+public class BaseDaoImpl<T> extends HibernateDaoSupport implements IBaseDao<T>{
+
+	private Class<T> entityClass;
+
+	@Override
+	public void save(T entity) {
+		this.getHibernateTemplate().save(entity);
+	}
+
+	@Override
+	public void delete(T entity) {
+		this.getHibernateTemplate().delete(entity);
+	}
+
+	@Override
+	public void update(T entity) {
+		this.getHibernateTemplate().update(entity);
+	}
+
+	@Override
+	public T findById(Serializable id) {
+		
+		return this.getHibernateTemplate().get(entityClass, id);
+	}
+
+	@Override
+	public List<T> findAll() {
+		
+		return null;
+	}
+	
+}

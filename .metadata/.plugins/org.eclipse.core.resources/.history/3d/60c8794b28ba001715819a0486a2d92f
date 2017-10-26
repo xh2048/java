@@ -1,0 +1,7 @@
+package cn.xiahui.bos.service.impl;
+
+import cn.xiahui.bos.service.IUserService;
+
+public class UserServiceImpl implements IUserService {
+
+}

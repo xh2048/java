@@ -1,0 +1,16 @@
+package cn.xiahui.bos.service.impl;
+
+import cn.xiahui.bos.service.IUserService;
+import cn.xiahui.bos.service.User;
+
+@Service
+public class UserServiceImpl implements IUserService {
+
+	@Override
+	public User login(User model) {
+		
+		return null;
+	}
+
+
+}
