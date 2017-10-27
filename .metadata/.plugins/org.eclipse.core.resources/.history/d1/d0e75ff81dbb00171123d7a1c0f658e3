@@ -1,0 +1,10 @@
+package cn.xiahui.bos.utils;
+
+/**
+ * 
+ * @author XH2016
+ *
+ */
+public class PageBean {
+
+}

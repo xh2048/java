@@ -1,0 +1,11 @@
+package cn.xiahui.bos.utils;
+
+/**
+ * 
+ * 封装分页数据
+ *
+ *
+ */
+public class PageBean {
+
+}

@@ -2,10 +2,8 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="com.opensymphony.xwork2.ActionSupport"/>
 <fullyQualifiedTypeName name="com.opensymphony.xwork2.ModelDriven"/>
-<fullyQualifiedTypeName name="org.apache.commons.lang3.StringUtils"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="antlr.collections.List"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.springframework.orm.hibernate5.support.HibernateDaoSupport"/>
 <fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
 <fullyQualifiedTypeName name="javax.annotation.Resource"/>
@@ -16,9 +14,7 @@
 <fullyQualifiedTypeName name="com.opensymphony.xwork2.interceptor.MethodFilterInterceptor"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="cn.xiahui.bos.domain.User"/>
-<fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="cn.xiahui.bos.utils.BOSUtils"/>
-<fullyQualifiedTypeName name="org.apache.struts2.ServletActionContext"/>
 <fullyQualifiedTypeName name="cn.xiahui.bos.utils.MD5Utils"/>
 <fullyQualifiedTypeName name="cn.xiahui.bos.web.action.base.BaseAction"/>
 <fullyQualifiedTypeName name="cn.xiahui.bos.domain.Staff"/>
@@ -30,4 +26,13 @@
 <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
 <fullyQualifiedTypeName name="cn.xiahui.bos.dao.base.IBaseDao"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="org.hibernate.criterion.DetachedCriteria"/>
+<fullyQualifiedTypeName name="net.sf.json.JsonConfig"/>
+<fullyQualifiedTypeName name="net.sf.json.JSONObject"/>
+<fullyQualifiedTypeName name="org.apache.struts2.ServletActionContext"/>
+<fullyQualifiedTypeName name="cn.xiahui.bos.utils.PageBean"/>
+<fullyQualifiedTypeName name="org.hibernate.criterion.Projections"/>
+<fullyQualifiedTypeName name="org.apache.commons.lang3.StringUtils"/>
 </qualifiedTypeNameHistroy>

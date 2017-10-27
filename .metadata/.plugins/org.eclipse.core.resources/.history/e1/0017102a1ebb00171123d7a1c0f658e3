@@ -1,0 +1,12 @@
+package cn.xiahui.bos.utils;
+
+/**
+ * 
+ * 封装分页数据
+ *
+ *
+ */
+public class PageBean {
+	private int currentPage;//当前页码
+	pageSize
+}
