@@ -1,9 +1,0 @@
-package cn.xiahui.bos.web.action;
-
-import cn.xiahui.bos.domain.Staff;
-import cn.xiahui.bos.web.action.base.BaseAction;
-
-public class StaffAction extends BaseAction<Staff> {
-	
-	private IStaffService staffService;
-}

@@ -1,7 +1,0 @@
-package cn.xiahui.bos.service.impl;
-
-import cn.xiahui.bos.service.IStaffService;
-
-public class StaffServiceImpl implements IStaffService{
-	
-}

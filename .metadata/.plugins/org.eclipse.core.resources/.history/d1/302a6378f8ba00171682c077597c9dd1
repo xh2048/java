@@ -1,9 +1,0 @@
-package cn.xiahui.bos.dao;
-
-import cn.xiahui.bos.domain.Staff;
-
-public interface IStaffDao {
-
-	void save(Staff model);
-
-}
