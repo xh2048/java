@@ -2,14 +2,7 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="com.opensymphony.xwork2.ActionSupport"/>
 <fullyQualifiedTypeName name="com.opensymphony.xwork2.ModelDriven"/>
-<fullyQualifiedTypeName name="cn.xiahui.bos.web.action.base.BaseAction"/>
-<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
-<fullyQualifiedTypeName name="org.springframework.context.annotation.Scope"/>
 <fullyQualifiedTypeName name="org.apache.commons.lang3.StringUtils"/>
-<fullyQualifiedTypeName name="org.apache.struts2.ServletActionContext"/>
-<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
-<fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="antlr.collections.List"/>
 <fullyQualifiedTypeName name="java.util.List"/>
@@ -17,11 +10,24 @@
 <fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
 <fullyQualifiedTypeName name="javax.annotation.Resource"/>
 <fullyQualifiedTypeName name="java.lang.reflect.ParameterizedType"/>
-<fullyQualifiedTypeName name="cn.xiahui.bos.dao.base.IBaseDao"/>
 <fullyQualifiedTypeName name="cn.xiahui.bos.dao.base.impl.BaseDaoImpl"/>
 <fullyQualifiedTypeName name="cn.xiahui.bos.dao.IUserDao"/>
 <fullyQualifiedTypeName name="cn.xiahui.bos.service.IUserService"/>
-<fullyQualifiedTypeName name="cn.xiahui.bos.utils.MD5Utils"/>
+<fullyQualifiedTypeName name="com.opensymphony.xwork2.interceptor.MethodFilterInterceptor"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="cn.xiahui.bos.domain.User"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="cn.xiahui.bos.utils.BOSUtils"/>
+<fullyQualifiedTypeName name="org.apache.struts2.ServletActionContext"/>
+<fullyQualifiedTypeName name="cn.xiahui.bos.utils.MD5Utils"/>
+<fullyQualifiedTypeName name="cn.xiahui.bos.web.action.base.BaseAction"/>
+<fullyQualifiedTypeName name="cn.xiahui.bos.domain.Staff"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Scope"/>
+<fullyQualifiedTypeName name="cn.xiahui.bos.service.IStaffService"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
+<fullyQualifiedTypeName name="cn.xiahui.bos.dao.base.IBaseDao"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
 </qualifiedTypeNameHistroy>

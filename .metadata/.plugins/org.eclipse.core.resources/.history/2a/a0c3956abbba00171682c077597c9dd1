@@ -1,0 +1,10 @@
+package cn.xiahui.bos.utils;
+
+import javax.servlet.http.HttpSession;
+
+public class BOSUtils {
+	//获取session对象
+	public static HttpSession getSession(){
+		
+	}
+}

@@ -1,0 +1,15 @@
+package cn.xiahui.bos.service.impl;
+
+import cn.xiahui.bos.domain.Staff;
+import cn.xiahui.bos.service.IStaffService;
+
+public class StaffServiceImpl implements IStaffService{
+
+	private IStaffDao staffDao;
+
+	@Override
+	public void save(Staff model) {
+		staffDao.save(model);
+	}
+	
+}

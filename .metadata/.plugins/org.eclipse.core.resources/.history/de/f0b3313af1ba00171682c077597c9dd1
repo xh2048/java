@@ -1,0 +1,8 @@
+package cn.xiahui.bos.domain;
+
+public class Snippet {
+	public static void main(String[] args) {
+		editPasswordForm
+	}
+}
+
