@@ -15,6 +15,7 @@ import org.hibernate.criterion.Projections;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
 import cn.xiahui.bos.dao.base.IBaseDao;
+import cn.xiahui.bos.domain.Region;
 import cn.xiahui.bos.utils.PageBean;
 
 public class BaseDaoImpl<T> extends HibernateDaoSupport implements IBaseDao<T>{
@@ -58,7 +59,7 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements IBaseDao<T>{
 
 	@Override
 	public List<T> findAll() {
-		String hql = "FROM" + entityClass.getSimpleName();
+		String hql = "FROM " + entityClass.getSimpleName();
 		return (List<T>) this.getHibernateTemplate().find(hql);
 	}
 
@@ -97,6 +98,10 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements IBaseDao<T>{
 		pageBean.setRows(rows);
 		
 		
+	}
+
+	public void saveOrUpdate(T entity) {
+		this.getHibernateTemplate().saveOrUpdate(entity);
 	}
 	
 }

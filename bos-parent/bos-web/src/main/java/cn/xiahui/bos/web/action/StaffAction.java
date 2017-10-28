@@ -30,16 +30,20 @@ public class StaffAction extends BaseAction<Staff> {
 	}
 	
 
-
-	//属性驱动，接收页面提交的分页参数
-	private int page;
-	private int rows;
-	//属性驱动，接收页面提交的ids参数
-	private String ids;
-	
 	/**
 	 * 分页查询方法
 	 */
+	public String pageQuery() throws IOException{
+		staffService.pageQuery(pageBean);
+		this.java2Json(pageBean, new String[]{"currentPage","detachedCriteria","pageSize"});
+		return NONE;
+	}
+/*
+	//属性驱动，接收页面提交的分页参数
+	private int page;
+	private int rows;
+
+	
 	public String pageQuery() throws IOException{
 		PageBean pageBean = new PageBean();
 		pageBean.setCurrentPage(page);
@@ -60,6 +64,12 @@ public class StaffAction extends BaseAction<Staff> {
 		ServletActionContext.getResponse().getWriter().print(json);
 		return NONE;
 	}
+*/
+	
+	//属性驱动，接收页面提交的ids参数
+	private String ids;
+	
+	
 	
 	/**
 	 * 取派员批量删除
@@ -85,20 +95,7 @@ public class StaffAction extends BaseAction<Staff> {
 		return LIST;
 	}
 	
-	public int getPage() {
-		return page;
-	}
-	public void setPage(int page) {
-		this.page = page;
-	}
 
-	public int getRows() {
-		return rows;
-	}
-
-	public void setRows(int rows) {
-		this.rows = rows;
-	}
 
 	public String getIds() {
 		return ids;
