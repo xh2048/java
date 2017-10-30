@@ -3,7 +3,10 @@ package cn.xiahui.bos.dao.base;
 import java.io.Serializable;
 import java.util.List;
 
+import org.hibernate.criterion.DetachedCriteria;
+
 import cn.xiahui.bos.domain.Region;
+import cn.xiahui.bos.domain.Staff;
 import cn.xiahui.bos.utils.PageBean;
 
 /**
@@ -18,4 +21,5 @@ public interface IBaseDao<T> {
 	public void executeUpdate(String queryName, Object...objects);
 	public void pageQuery(PageBean pageBean);
 	public void saveOrUpdate(T entity);
+	public List<T> findByCriteria(DetachedCriteria detachedCriteria);
 }

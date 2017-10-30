@@ -15,7 +15,7 @@ import org.hibernate.criterion.Projections;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
 import cn.xiahui.bos.dao.base.IBaseDao;
-import cn.xiahui.bos.domain.Region;
+import cn.xiahui.bos.domain.Staff;
 import cn.xiahui.bos.utils.PageBean;
 
 public class BaseDaoImpl<T> extends HibernateDaoSupport implements IBaseDao<T>{
@@ -92,6 +92,10 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements IBaseDao<T>{
 		
 		//查询rows---当前页需要展示的数据集合
 		detachedCriteria.setProjection(null);//指定hibernate框架发出sql的形式----》select * from bc_staff;
+		
+		//指定hibernate框架封装对象的方式
+		detachedCriteria.setResultTransformer(DetachedCriteria.ROOT_ENTITY);
+		
 		int firstResult = (currentPage - 1) * pageSize;
 		int maxResults = pageSize;
 		List rows = this.getHibernateTemplate().findByCriteria(detachedCriteria,firstResult,maxResults);
@@ -102,6 +106,11 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements IBaseDao<T>{
 
 	public void saveOrUpdate(T entity) {
 		this.getHibernateTemplate().saveOrUpdate(entity);
+	}
+
+	@Override
+	public List<T> findByCriteria(DetachedCriteria detachedCriteria) {
+		return (List<T>) this.getHibernateTemplate().findByCriteria(detachedCriteria);
 	}
 	
 }
