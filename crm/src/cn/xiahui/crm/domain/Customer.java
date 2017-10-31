@@ -11,11 +11,9 @@ public class Customer {
 	 private String address ;
 	 private String decidedzone_id ;
 	 
-	 
-	 
-	public Customer() {
+	 public Customer() {
 	}
-
+	 
 	public Customer(int id, String name, String station, String telephone, String address, String decidedzone_id) {
 		super();
 		this.id = id;
@@ -25,7 +23,8 @@ public class Customer {
 		this.address = address;
 		this.decidedzone_id = decidedzone_id;
 	}
-	
+
+
 	public int getId() {
 		return id;
 	}
@@ -62,6 +61,4 @@ public class Customer {
 	public void setDecidedzone_id(String decidedzone_id) {
 		this.decidedzone_id = decidedzone_id;
 	}
-	 
-	 
 }

@@ -1,6 +1,7 @@
 package cn.xiahui.bos.web.action;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import cn.xiahui.bos.domain.Decidedzone;
 import cn.xiahui.bos.service.IDecidedzoneService;
 import cn.xiahui.bos.web.action.base.BaseAction;
+import cn.xiahui.crm.Customer;
+import cn.xiahui.crm.ICustomerService;
 
 /**
  *定区管理
@@ -42,4 +45,46 @@ public class DecidedzoneAction extends BaseAction<Decidedzone>{
 		this.java2Json(pageBean, new String[]{"currentPage","detachedCriteria","pageSize","subareas","decidedzones"});
 		return NONE;
 	}
+	
+	//注入crm代理对象
+	@Autowired
+	private ICustomerService proxy;
+	
+	/**
+	 * 远程调用crm服务，获取未关联到定区的客户
+	 */
+	public String findListNotAssociation(){
+		List<Customer> list =  proxy.findListNotAssociation();
+		this.java2Json(list, new String[]{});
+		return NONE;
+	}
+	/**
+	 * 远程调用crm服务，获取已经关联到指定的定区的客户
+	 */
+	public String findListHasAssociation(){
+		String id = model.getId();
+		List<Customer> list =  proxy.findListHasAssociation(id);
+		this.java2Json(list, new String[]{});
+		return NONE;
+	}
+	//属性驱动，接受页面提交的多个，客户id
+	private List<Integer> customerIds;
+	
+	/**
+	 * 远程调用crm服务,将客户关联到定区
+	 */
+	public String assigncustomertodecidedzone(){
+		proxy.assigncustomerstodecidedzone(model.getId(),customerIds);
+		return LIST;
+	}
+
+	public List<Integer> getCustomerIds() {
+		return customerIds;
+	}
+
+	public void setCustomerIds(List<Integer> customerIds) {
+		this.customerIds = customerIds;
+	}
+	
+	
 }
