@@ -19,10 +19,24 @@ import javax.xml.ws.ResponseWrapper;
  */
 @WebService(name = "ICustomerService", targetNamespace = "http://service.crm.xiahui.cn/")
 @XmlSeeAlso({
-  //  ObjectFactory.class
+   // ObjectFactory.class
 })
 public interface ICustomerService {
 
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "findDecidedzoneIdByAddress", targetNamespace = "http://service.crm.xiahui.cn/", className = "cn.xiahui.crm.FindDecidedzoneIdByAddress")
+    @ResponseWrapper(localName = "findDecidedzoneIdByAddressResponse", targetNamespace = "http://service.crm.xiahui.cn/", className = "cn.xiahui.crm.FindDecidedzoneIdByAddressResponse")
+    public String findDecidedzoneIdByAddress(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
 
     /**
      * 
@@ -62,6 +76,20 @@ public interface ICustomerService {
         String arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         List<Integer> arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns cn.xiahui.crm.Customer
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "findCustomerByTelephone", targetNamespace = "http://service.crm.xiahui.cn/", className = "cn.xiahui.crm.FindCustomerByTelephone")
+    @ResponseWrapper(localName = "findCustomerByTelephoneResponse", targetNamespace = "http://service.crm.xiahui.cn/", className = "cn.xiahui.crm.FindCustomerByTelephoneResponse")
+    public Customer findCustomerByTelephone(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
 
     /**
      * 

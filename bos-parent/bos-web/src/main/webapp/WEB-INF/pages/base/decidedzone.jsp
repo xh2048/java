@@ -60,12 +60,12 @@
 			var url_1 = "decidedzoneAction_findListNotAssociation.action";
 			$.post(url_1,function(data){
 				//遍历json数组
-				for(var i=0;id<data.length;i++){
+				for(var i=0;i<data.length;i++){
 					var id = data[i].id;
 					var name = data[i].name;
 					var telephone = data[i].telephone;
 					name = name + "(" + telephone + ")";
-					$("#noassociationSelect").append("<option value='"+id+"'>'"+name+"</option>");
+					$("#noassociationSelect").append("<option value='"+id+"'>"+name+"</option>");
 				}
 			});
 			
@@ -74,12 +74,12 @@
 			var decidedzoneId = rows[0].id;
 			$.post(url_2,{"id":decidedzoneId},function(data){
 				//遍历json数组
-				for(var i=0;id<data.length;i++){
+				for(var i=0;i<data.length;i++){
 					var id = data[i].id;
 					var name = data[i].name;
 					var telephone = data[i].telephone;
 					name = name + "(" + telephone + ")";
-					$("#associationSelect").append("<option value='"+id+"'>'"+name+"</option>");
+					$("#associationSelect").append("<option value='"+id+"'>"+name+"</option>");
 				}
 			});
 		}
@@ -196,14 +196,14 @@
 		
 	});
 
-	function doDblClickRow(){
-		alert("双击表格数据...");
+	function doDblClickRow(index,data){
+		//将页面中table变为datagrid样式
 		$('#association_subarea').datagrid( {
 			fit : true,
 			border : true,
 			rownumbers : true,
 			striped : true,
-			url : "json/association_subarea.json",
+			url : "subareaAction_findListByDecidedzoneId.action?decidedzoneId="+data.id,
 			columns : [ [{
 				field : 'id',
 				title : '分拣编号',
@@ -265,7 +265,7 @@
 			border : true,
 			rownumbers : true,
 			striped : true,
-			url : "json/association_customer.json",
+			url : "decidedzoneAction_findListHasAssociation.action?id="+data.id,
 			columns : [[{
 				field : 'id',
 				title : '客户编号',
@@ -386,9 +386,9 @@
 	</div>
 	
 	<!-- 关联客户窗口 -->
-	<div class="easyui-window" title="关联客户窗口" id="customerWindow" collapsible="false" closed="true" minimizable="false" maximizable="false" style="top:20px;left:200px;width: 400px;height: 300px;">
+	<div modal=true class="easyui-window" title="关联客户窗口" id="customerWindow" collapsible="false" closed="true" minimizable="false" maximizable="false" style="top:20px;left:200px;width: 400px;height: 300px;">
 		<div style="overflow:auto;padding:5px;" border="false">
-			<form id="customerForm" action="${pageContext.request.contextPath }/decidedzone_assigncustomerstodecidedzone.action" method="post">
+			<form id="customerForm" action="${pageContext.request.contextPath }/decidedzoneAction_assigncustomerstodecidedzone.action" method="post">
 				<table class="table-edit" width="80%" align="center">
 					<tr class="title">
 						<td colspan="3">关联客户</td>
@@ -403,7 +403,7 @@
 							<input type="button" value="《《" id="toLeft">
 							<script type="text/javascript">
 								$(function(){
-									//为左右移动按钮绑定时间
+									//为左右移动按钮绑定事件
 									$("#toRight").click(function(){
 										$("#associationSelect").append($("#noassociationSelect option:selected"));
 									});
@@ -412,7 +412,7 @@
 									});
 									
 									//为关联客户按钮绑定事件
-									$("#associationSelect").click(function(){
+									$("#associationBtn").click(function(){
 										var rows = $("#grid").datagrid("getSelections");
 										var id = rows[0].id;
 										//为隐藏域（存放定区id）赋值
