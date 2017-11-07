@@ -3,6 +3,9 @@ package cn.xiahui.bos.web.action;
 import java.io.IOException;
 import java.util.List;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.subject.Subject;
 import org.apache.struts2.ServletActionContext;
 import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,6 +78,7 @@ public class StaffAction extends BaseAction<Staff> {
 	/**
 	 * 取派员批量删除
 	 */
+	@RequiresPermissions("staff-delete")//执行这个方法，需要当前用户具有staff-delete这个权限
 	public String deleteBatch(){
 		staffService.deleteBatch(ids);
 		return LIST;
@@ -84,6 +88,9 @@ public class StaffAction extends BaseAction<Staff> {
 	 * 修改取派员信息
 	 */
 	public String edit(){
+		Subject subject = SecurityUtils.getSubject();
+		subject.checkPermission("staff-edit");
+		
 		//显查询数据库，根据id查询原始数据
 		Staff staff = staffService.findById(model.getId());
 		//使用页面提交的数据进行覆盖

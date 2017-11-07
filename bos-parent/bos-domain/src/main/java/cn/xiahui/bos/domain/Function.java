@@ -12,15 +12,32 @@ public class Function implements java.io.Serializable {
 	// Fields
 
 	private String id;
-	private Function ParentFunction;//当前权限的上级权限
+	private Function parentFunction;//当前权限的上级权限
 	private String name;
 	private String code;
 	private String description;
 	private String page;
-	private String generatemenu;//是否生成菜单，1是，0否
+	private String generatemenu;//是否生成菜单，1：是 0：否
 	private Integer zindex;
 	private Set roles = new HashSet(0);//当前权限对应的多个角色
 	private Set children = new HashSet(0);//当前权限的下级权限
+	
+	public String getpId(){
+		if(parentFunction == null){
+			return "0";
+		}
+		return parentFunction.getId();
+	}
+	
+	public Function() {}
+	
+	public Function(String functionId) {
+		this.id = functionId;
+	}
+
+	public String getText(){
+		return name;
+	}
 	
 	public String getId() {
 		return id;
@@ -29,10 +46,10 @@ public class Function implements java.io.Serializable {
 		this.id = id;
 	}
 	public Function getParentFunction() {
-		return ParentFunction;
+		return parentFunction;
 	}
 	public void setParentFunction(Function parentFunction) {
-		ParentFunction = parentFunction;
+		this.parentFunction = parentFunction;
 	}
 	public String getName() {
 		return name;
@@ -82,6 +99,4 @@ public class Function implements java.io.Serializable {
 	public void setChildren(Set children) {
 		this.children = children;
 	}
-
-
 }
