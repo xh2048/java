@@ -8,7 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import cn.xiahui.bos.dao.IFunctionDao;
 import cn.xiahui.bos.domain.Function;
+import cn.xiahui.bos.domain.User;
 import cn.xiahui.bos.service.IFuctionService;
+import cn.xiahui.bos.utils.BOSUtils;
 import cn.xiahui.bos.utils.PageBean;
 
 @Service
@@ -37,6 +39,23 @@ public class FunctionServiceImpl implements IFuctionService{
 
 	public void pageQuery(PageBean pageBean) {
 		dao.pageQuery(pageBean);
+	}
+
+
+	/**
+	 * 根据当前登录人查询对应的菜单数据，返回json
+	 */
+	public List<Function> findMenu() {
+		List<Function> list = null;
+		User user = BOSUtils.getLoginUser();
+		if(user.getUsername().equals("admin")){
+			//如果是超级管理员内置用户，查询所有菜单
+			list = dao.findAllMenu();
+		}else{
+			//其他用户，根据用户id查询菜单
+			list = dao.findMenuByUserId(user.getId());
+		}
+		return list;
 	}
 
 }
