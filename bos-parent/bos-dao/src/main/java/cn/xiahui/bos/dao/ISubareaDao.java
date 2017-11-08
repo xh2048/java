@@ -1,11 +1,15 @@
 package cn.xiahui.bos.dao;
 
+import java.util.List;
+
 import cn.xiahui.bos.dao.base.IBaseDao;
 import cn.xiahui.bos.domain.Subarea;
 
 public interface ISubareaDao extends IBaseDao<Subarea>{
 
 	
-	public void save(Subarea model);
+	
+
+	public List<Object> findSubareasGroupByProvince();
 
 }

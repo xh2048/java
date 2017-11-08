@@ -51,4 +51,10 @@ public class SubareaServiceImpl implements ISubareaService {
 		detachedCriteria.add(Restrictions.eq("decidedzone.id", decidedzoneId));
 		return subareaDao.findByCriteria(detachedCriteria);
 	}
+
+	@Override
+	public List<Object> findSubareasGroupByProvince() {
+		
+		return subareaDao.findSubareasGroupByProvince();
+	}
 }
