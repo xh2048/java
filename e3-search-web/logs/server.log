@@ -1049,3 +1049,25 @@ java.net.ConnectException: Connection timed out: no further information
 
 [WARN ] 2017-12-06 16:44:32,827 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108)
 Client session timed out, have not heard from server in 20000ms for sessionid 0x15fe71a50610070
+
+
+[WARN ] 2017-12-07 11:32:40,861 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1108)
+Client session timed out, have not heard from server in 20000ms for sessionid 0x15fe36cda650136
+
+
+[WARN ] 2017-12-07 11:33:04,360 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1162)
+Session 0x15fe36cda650136 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection timed out: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+
+
+[WARN ] 2017-12-07 11:33:28,028 method:org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1162)
+Session 0x15fe36cda650136 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection timed out: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
