@@ -39,7 +39,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 		//判断token是否存在
 		if(StringUtils.isBlank(token)){
 			//如果token不存在，未登录状态，跳转到sso系统的登录页面。用户登录成功后，跳转到当前请求的url
-			response.sendRedirect(SSO_URL + "/page/login?redirect=" + request.getRequestURI());
+			response.sendRedirect(SSO_URL + "/page/login?redirect=" + request.getRequestURL());
 			//拦截
 			return false;
 		}
@@ -48,7 +48,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 		//如果娶不到，用户登录已经过期，需要登录
 		if(e3Result.getStatus() != 200){
 			//如果token不存在，未登录状态，跳转到sso系统的登录页面。用户登录成功后，跳转到当前请求的url
-			response.sendRedirect(SSO_URL + "/page/login?redirect=" + request.getRequestURI());
+			response.sendRedirect(SSO_URL + "/page/login?redirect=" + request.getRequestURL());
 			//拦截
 			return false;
 		}
@@ -65,16 +65,20 @@ public class LoginInterceptor implements HandlerInterceptor {
 		return true;
 	}
 	
+
 	@Override
-	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object arg2, Exception arg3)
+	public void afterCompletion(HttpServletRequest arg0, HttpServletResponse arg1, Object arg2, Exception arg3)
 			throws Exception {
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
-	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object arg2, ModelAndView arg3)
+	public void postHandle(HttpServletRequest arg0, HttpServletResponse arg1, Object arg2, ModelAndView arg3)
 			throws Exception {
-	}
+		// TODO Auto-generated method stub
 
+	}
 
 
 }
